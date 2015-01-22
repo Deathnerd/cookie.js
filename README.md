@@ -6,6 +6,7 @@ To use it, add
 
 ```html
 <script src="path/to/js.class.js"></script>
+<script src="path/to/utils.js"></script>
 <script src="path/to/cookie.js"></script>
 ``` 
 into your html document, then call 
