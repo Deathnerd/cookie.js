@@ -16,4 +16,4 @@ var cookie = new Cookie();
 and that's it! cookie.js will either fetch an existing cookie or create a blank one
 
 ##Thanks
-Special thanks to dkraczkowski for making javascript class creation easy with [https://github.com/dkraczkowski/js.class](js.class)
+Special thanks to dkraczkowski for making javascript class creation easy with [js.class](https://github.com/dkraczkowski/js.class)
