@@ -20,6 +20,9 @@ var Cookie = new Class({
 		//Okay, let's eat these cookies
 		this.read();
 	},
+	/**
+	 * @description Reads the string in document.cookie and stores it into Cookie.data
+	 */
 	read: function () {
 		// Crumble that cookie into chunks
 		this.data = {};
@@ -32,9 +35,12 @@ var Cookie = new Class({
 			}
 			this.data[temp[0]] = temp[1];
 		}
-		return this;
 	},
 
+	/**
+	 * @description The reverse of Cookie.read(). It stringifies the Cookie.data and writes to document.cookie
+	 * 		Note: It wipes everything in document.cookie before writing!
+	 */
 	save: function(){
 		//reset the cookie
 		document.cookie = "";
@@ -45,38 +51,31 @@ var Cookie = new Class({
 		}
 		//remove trailing bar
 		document.cookie = document.cookie.slice(0, -1);
-		return this;
 	},
 
 	/**
-	 * Add a key:value to the cookie data set
+	 * @descrpition Add a key:value to the cookie data set
 	 * @param key
 	 * @param value
-	 * @returns {Cookie}
 	 */
 	add: function(key, value){
 		this.data[key] = value;
-		return this;
 	},
 
 	/**
-	 * Remove a key:value from the cookie
+	 * @description Remove a key:value from the cookie
 	 * @param key
-	 * @returns {Cookie}
 	 */
 	remove: function(key){
 		delete this.data[key];
-		return this;
 	},
 
 	/**
-	 * Change a key:value in the cookie
+	 * @description Change a key:value in the cookie
 	 * @param key
 	 * @param value
-	 * @returns {Cookie}
 	 */
 	change: function(key, value){
 		this.data[key] = value;
-		return this;
 	}
 });
