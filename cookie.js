@@ -5,7 +5,11 @@
  * @type {Class}
  */
 var Cookie = new Class({
-
+	
+	kvSeparator: "=",
+	
+	delimiter: ";",
+	
 	data: {},
 	/**
 	 * Constructor!
@@ -26,10 +30,10 @@ var Cookie = new Class({
 	read: function () {
 		// Crumble that cookie into chunks
 		this.data = {};
-		var cookie_vals = document.cookie.split("|");
+		var cookie_vals = document.cookie.split(this.delimiter);
 		// Okay now we're gonna smash it and sweep up the crumbs
 		for(var i = 0; i < cookie_vals.length; i++){
-			var temp = cookie_vals[i].split(":");
+			var temp = cookie_vals[i].split(this.kvSeparator);
 			if(temp[1].isNumber()){
 				temp[1] = temp[1].toNumber();
 			}
