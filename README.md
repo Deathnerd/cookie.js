@@ -1,5 +1,5 @@
 # cookie.js
-An easy way to manage a browser cookie. I guess it's sort of like an Active Record system 
+An easy way to manage a browser cookie. ~~I guess it's sort of like an Active Record system~~ I have been informed that it's a Repository pattern. I was unaware such a pattern existed
 
 ## Usage
 To use it, add 
