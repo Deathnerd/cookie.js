@@ -25,10 +25,7 @@ Cookie.change('key', 'value'); //changes the value associated with key in Cookie
 ```
 
 ##Issues
-cookie.js currently only works for blank cookies and cookies it creates. It does not play nice with things like PHP session cookies. See todo for a planned fix
-
-##Todo
-* Make server side scripts to parse and create cookie.js cookies
+Due to using the HTTP-Only flag, PHP Sessions and the like do not play well with cookie.js in terms that you can't use cookie.js to modify a cookie set by the server and have it persist. However, you can still use cookie.js to read data from your cookies
 
 ##Thanks
 Special thanks to dkraczkowski for making javascript class creation easy with [js.class](https://github.com/dkraczkowski/js.class)
