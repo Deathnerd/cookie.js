@@ -4,7 +4,7 @@
  * @type {Class}
  */
 var Cookie = new Class({
-
+    
     data: {},
     /**
      * Constructor!
@@ -27,10 +27,10 @@ var Cookie = new Class({
         // Crumble that cookie into chunks
         this.data = {};
         try {
-            var cookie_vals = document.cookie.split("|");
+            var cookie_vals = document.cookie.split(";");
             // Okay now we're gonna smash it and sweep up the crumbs
             for (var i = 0; i < cookie_vals.length; i++) {
-                var temp = cookie_vals[i].split(":");
+                var temp = cookie_vals[i].split("=");
                 if (temp[1].isNumber()) {
                     temp[1] = temp[1].toNumber();
                 }
@@ -50,11 +50,9 @@ var Cookie = new Class({
         document.cookie = "";
         for (var prop in this.data) {
             if (this.data.hasOwnProperty(prop)) {
-                document.cookie += prop + ":" + this.data[prop] + "|";
+                document.cookie += prop + "=" + this.data[prop] + ";";
             }
         }
-        //remove trailing bar
-        document.cookie = document.cookie.slice(0, -1);
     },
 
     /**
